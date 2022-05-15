@@ -1,0 +1,8 @@
+model,VAL_Mape
+Single_GRU,0.024
+Single_LSTM,0.03
+CNN,0.041
+Deep_GRU,0.055
+Deep_LSTM,0.056
+SARIMAX,0.086
+Facebook_Prophet,1.493
