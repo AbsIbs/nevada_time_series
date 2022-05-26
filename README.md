@@ -86,15 +86,15 @@ From the image above, we can see that, comparitively, the Facebook prophet model
 ![image](https://github.com/AbsIbs/nevada_time_series/raw/main/images/model_results_2.png)
 The image below provides a clearer visual comparison between the models by excluding the Prophet model as an outlier. Overall, the **single layer GRU** model performed the best with a MAPE of **0.024**.
 
-|   	|            model 	| VAL_Mape 	|
-|--:	|-----------------:	|---------:	|
-|   	|       Single_GRU 	|    0.024 	|
-|   	|      Single_LSTM 	|    0.030 	|
-|   	|              CNN 	|    0.041 	|
-|   	|         Deep_GRU 	|    0.055 	|
-|   	|        Deep_LSTM 	|    0.056 	|
-|   	|          SARIMAX 	|    0.086 	|
-|   	| Facebook_Prophet 	|    1.493 	|
+|            model 	| VAL_Mape 	|
+|-----------------:	|---------:	|
+|       Single_GRU 	|    0.024 	|
+|      Single_LSTM 	|    0.030 	|
+|              CNN 	|    0.041 	|
+|         Deep_GRU 	|    0.055 	|
+|        Deep_LSTM 	|    0.056 	|
+|          SARIMAX 	|    0.086 	|
+| Facebook_Prophet 	|    1.493 	|
 
 ## Conclusion
 When applying our best model to the business quesion, the best zipcode to invest in within Nevada is **89060** i.e. **Pahrump, NV**
