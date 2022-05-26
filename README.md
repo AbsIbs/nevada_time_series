@@ -43,14 +43,53 @@ Our findings from the project has been visualised in the form of an interactive 
 - Additional fetures: microeconomic features web scraped data from **www.UnitedStatesZipCodes.org** & macroeconomic features gathered from Fred [Economic Data](https://fred.stlouisfed.org/)
 
 ## Methodology
-As predicting the future house prices of 14,000 zipcodes would prove too time-consuming, only the top zipcode that had the largest ROI over the last 5 years worth of data (2013 - 2018) were analysed. When investigated, it was found that **Nevada** zipcodes yielded the largest ROI.
+As predicting the future house prices of 14,000 zipcodes would prove too time-consuming, only the top zipcode that had the largest ROI over the last 5 years worth of data (2013 - 2018) were analysed. 
+When examining the zipcodes on a state-level, it was found that **Nevada** zipcodes yielded the largest ROI with **64.7%.**
 ![image]()
+
+Interestingly, it was also found that the 5 year ROI was largest on the west coast and decreased as you head towards the east.
+
+Additionally, we can view the top 5 states in terms of 5 year ROI.
+![image]()
+
+Overall, this left just under 100 zipcodes to model.
 
 ## Exploratory Data Analysis
 Having established **Nevada** our the focus of the project, the first part of the EDA examined the general trend of the ROI was examined. Naturally, it revealed a losses around 2008 due to the recession.
+![image]()
 
 ## Modelling
 ### Feature Engineering
 To maximise the performace of the models, large amounts of exogenous variable in the form of **micro/macroeconomic** variables.
+![image]()
 
+### Models
+The project used the following models:
+- Neural Network Architectures (**LSTM | GRU | CNN**)
+- SARIMAX Model
+- Facebook Prophet Model
 
+With the Neural Network models, a single model only 1 model was made to model all of the zipcodes. In contrast, the Facebook Prophet and SARIMAX models required a separate model for each zipcode to be made.
+
+With predictions, the models are simply aiming to predict the next month's average house price per zipcode. 
+
+## Model Performance
+The metric of interest in this project is **MAPE**(mean average percentage error). The best model has the lowest MAPE.
+![image]()
+From the image above, we can see that, comparitively, the Facebook prophet model performed significantly worse. 
+![image]()
+The image below provides a clearer visual comparison between the models by excluding the Prophet model as an outlier. Overall, the **single layer GRU** model performed the best with a MAPE of **0.024**.
+
+|   	|            model 	| VAL_Mape 	|
+|--:	|-----------------:	|---------:	|
+|   	|       Single_GRU 	|    0.024 	|
+|   	|      Single_LSTM 	|    0.030 	|
+|   	|              CNN 	|    0.041 	|
+|   	|         Deep_GRU 	|    0.055 	|
+|   	|        Deep_LSTM 	|    0.056 	|
+|   	|          SARIMAX 	|    0.086 	|
+|   	| Facebook_Prophet 	|    1.493 	|
+
+## Conclusion
+When applying our best model to the business quesion, the best zipcode to invest in within Nevada is **89060** i.e. **Pahrump, NV**
+![image]()
