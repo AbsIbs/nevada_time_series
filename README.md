@@ -1,5 +1,5 @@
 # Nevada Real Estate Investment Opportunities
-![image](https://github.com/AbsIbs/King_County_Project/raw/main/images/readme_image.png)
+![image](https://github.com/AbsIbs/nevada_time_series/raw/main/images/nevada.png)
 
 ## Table of Contents
 - <a href="#business-case">Business Case</a>
@@ -34,7 +34,7 @@ pip: -r requirements.txt
 ## Demo and Usage
 Our findings from the project has been visualised in the form of an interactive [dashboard](https://public.tableau.com/app/profile/abs4364/viz/NevadaTimeSeriesAnalysis/Dashboard) made by tableau.
 <br><br>
-![image]()
+![image](https://github.com/AbsIbs/nevada_time_series/raw/main/images/nevada_project_image.png)
 
 ## Dataset
 - Source: **Zillow Housing dataset**
@@ -45,23 +45,27 @@ Our findings from the project has been visualised in the form of an interactive 
 ## Methodology
 As predicting the future house prices of 14,000 zipcodes would prove too time-consuming, only the top zipcode that had the largest ROI over the last 5 years worth of data (2013 - 2018) were analysed. 
 When examining the zipcodes on a state-level, it was found that **Nevada** zipcodes yielded the largest ROI with **64.7%.**
-![image]()
+<br><br>
+![image](https://github.com/AbsIbs/nevada_time_series/raw/main/images/map.png)
 
 Interestingly, it was also found that the 5 year ROI was largest on the west coast and decreased as you head towards the east.
 
 Additionally, we can view the top 5 states in terms of 5 year ROI.
-![image]()
+<br><br>
+![image](https://github.com/AbsIbs/nevada_time_series/raw/main/images/top_5_zipcodes.png)
 
 Overall, this left just under 100 zipcodes to model.
 
 ## Exploratory Data Analysis
 Having established **Nevada** our the focus of the project, the first part of the EDA examined the general trend of the ROI was examined. Naturally, it revealed a losses around 2008 due to the recession.
-![image]()
+<br><br>
+![image](https://github.com/AbsIbs/nevada_time_series/raw/main/images/nv_roi_graph.png)
 
 ## Modelling
 ### Feature Engineering
 To maximise the performace of the models, large amounts of exogenous variable in the form of **micro/macroeconomic** variables.
-![image]()
+<br><br>
+![image](https://github.com/AbsIbs/nevada_time_series/raw/main/images/exogenous_variables.png)
 
 ### Models
 The project used the following models:
@@ -75,9 +79,11 @@ With predictions, the models are simply aiming to predict the next month's avera
 
 ## Model Performance
 The metric of interest in this project is **MAPE**(mean average percentage error). The best model has the lowest MAPE.
-![image]()
+<br><br>
+![image](https://github.com/AbsIbs/nevada_time_series/raw/main/images/model_results_1.png)
 From the image above, we can see that, comparitively, the Facebook prophet model performed significantly worse. 
-![image]()
+<br><br>
+![image](https://github.com/AbsIbs/nevada_time_series/raw/main/images/model_results_2.png)
 The image below provides a clearer visual comparison between the models by excluding the Prophet model as an outlier. Overall, the **single layer GRU** model performed the best with a MAPE of **0.024**.
 
 |   	|            model 	| VAL_Mape 	|
@@ -92,4 +98,5 @@ The image below provides a clearer visual comparison between the models by exclu
 
 ## Conclusion
 When applying our best model to the business quesion, the best zipcode to invest in within Nevada is **89060** i.e. **Pahrump, NV**
-![image]()
+<br><br>
+![image](https://github.com/AbsIbs/nevada_time_series/raw/main/images/conclusion.png)
